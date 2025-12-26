@@ -1,4 +1,5 @@
-#Youtube Smart Pause
+# Youtube Smart Pause
+A Chrome extension to pause Youtube videos when browser tab is switched.
 
 ## Installation
 1. Clone the repository to your computer.
