@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Youtube Smart Pause",
+  "version": "1.0",
+  "description": "Pause youtube When tab is changed",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": ["storage"]
+}
