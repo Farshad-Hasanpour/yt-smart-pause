@@ -11,9 +11,8 @@ document.addEventListener("visibilitychange", () => {
     let playBtn = document.getElementsByClassName(playBtnClass)[0];
     if (!video || !playBtn) return;
 
-    if (document.hidden) {
-      wasPlaying = video.classList.contains(playingClass);
-      if(wasPlaying) playBtn.click();
-    }
+    wasPlaying = video.classList.contains(playingClass);
+
+    if(document.hidden && wasPlaying) playBtn.click()
   });
 });

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Youtube Smart Pause",
   "version": "1.0",
-  "description": "Pause youtube When tab is changed",
+  "description": "Chrome extension to pause and play youtube videos when browser tab is switched",
   "action": {
     "default_popup": "popup.html"
   },

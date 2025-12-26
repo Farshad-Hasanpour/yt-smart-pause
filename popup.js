@@ -1,4 +1,4 @@
-const toggle = document.getElementById("toggle");
+const toggle = document.getElementById("check");
 
 // Load state
 chrome.storage.sync.get({ enabled: true }, ({ enabled }) => {

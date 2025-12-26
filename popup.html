@@ -5,23 +5,77 @@
     <style>
       body {
         font-family: system-ui, sans-serif;
-        padding: 10px;
-        min-width: 180px;
+        margin: 0;
+        padding: 0.5rem;
       }
-      label {
+
+      .checkmark {
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: #ddd;
+        border-radius: 10px;
+        position: relative;
+        transition: background-color 0.4s;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .toggle:checked ~ .checkmark {
+        background-color: #08bb68;
+      }
+
+      .checkmark::after {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 10px;
+        border-right: 3px solid #fff;
+        border-bottom: 3px solid #fff;
+        top: 44%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotateZ(40deg) scale(10);
+        opacity: 0;
+        transition: all 0.4s;
+      }
+
+      .toggle:checked ~ .checkmark::after {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotateZ(40deg) scale(1);
+      }
+
+      .check-container {
         display: flex;
         align-items: center;
-        gap: 8px;
-        cursor: pointer;
+      }
+
+      .checkbox-wrapper {
+        margin-right: 0.5rem;
+      }
+
+      .check-text {
+        font-size: 14px;
+        word-wrap: none;
+        white-space: nowrap;
       }
     </style>
   </head>
-  <body>
-    <label>
-      <input type="checkbox" id="toggle" />
-      Auto pause YouTube When tab is hidden
-    </label>
 
+  <body>
+    <div class="check-container">
+      <label class="checkbox-wrapper">
+        <input
+          :checked=""
+          type="checkbox"
+          id="check"
+          class="toggle"
+          hidden=""
+        >
+        <label for="check" class="checkmark"></label>
+      </label>
+      <span class="check-text">Smart <b>Pause</b> on Youtube tab switch</span>
+    </div>
+    
     <script src="popup.js"></script>
   </body>
 </html>
